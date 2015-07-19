@@ -3,8 +3,8 @@
 module.exports = function(config) {
 
   var configuration = {
-    autoWatch : false,
-
+    autoWatch: false,
+    logLevel: 'debug',
     frameworks: ['jasmine'],
 
     ngHtml2JsPreprocessor: {
@@ -12,12 +12,19 @@ module.exports = function(config) {
       moduleName: 'gulpAngular'
     },
 
-    browsers : ['PhantomJS'],
+    browsers: ['PhantomJS'],
 
-    plugins : [
+    plugins: [
       'karma-phantomjs-launcher',
       'karma-jasmine',
       'karma-ng-html2js-preprocessor'
+    ],
+    files: [
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'src/app/core/*.js',
+      'src/app/auth/*.js',
+      'src/app/*.js'
     ],
 
     preprocessors: {
@@ -29,7 +36,7 @@ module.exports = function(config) {
   // If you ever plan to use Chrome and Travis, you can keep it
   // If not, you can safely remove it
   // https://github.com/karma-runner/karma/issues/1144#issuecomment-53633076
-  if(configuration.browsers[0] === 'Chrome' && process.env.TRAVIS) {
+  if (configuration.browsers[0] === 'Chrome' && process.env.TRAVIS) {
     configuration.customLaunchers = {
       'chrome-travis-ci': {
         base: 'Chrome',

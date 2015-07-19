@@ -1,9 +1,7 @@
 'use strict';
 
-describe('controllers', function(){
+describe('controllers', function() {
   var scope;
-
-  beforeEach(module('jwtDemo'));
 
   beforeEach(inject(function($rootScope) {
     scope = $rootScope.$new();
@@ -12,7 +10,7 @@ describe('controllers', function(){
   it('should define more than 5 awesome things', inject(function($controller) {
     expect(scope.awesomeThings).toBeUndefined();
 
-    $controller('MainCtrl', {
+    $controller('AuthController', {
       $scope: scope
     });
 

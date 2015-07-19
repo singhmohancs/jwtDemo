@@ -3,17 +3,14 @@
 
   /**
    * @ngdoc overview
-   * @name jwtDemo
+   * @name jwtDemo.Auth
    *
-   * @module jwtDemo
+   * @module jwtDemo.Auth
    *
    * @description
-   * Create application module with sub module as dependencies
+   * Auth module
    *
    * @author Mohan Singh ( gmail::singhmohancs@gmail.com, skype :: mohan.singh42 )
    */
-  angular.module('jwtDemo', [
-    'jwtDemo.Core',
-    'jwtDemo.Auth'
-  ]);
+  angular.module('jwtDemo.Auth', []);
 })();

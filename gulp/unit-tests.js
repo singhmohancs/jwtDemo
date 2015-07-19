@@ -28,9 +28,11 @@ module.exports = function(options) {
     ];
 
     var srcFiles = [
-      options.src + '/{app,components}/**/*.js'
+      options.src + '/app/index.js',
+      options.src + '/{app,components}/**/*.js',
+      'bower_components/angular-mocks/angular-mocks.js'
     ].concat(specFiles.map(function(file) {
-      return '!' + file;
+      return file;
     }));
 
 

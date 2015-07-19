@@ -1,0 +1,23 @@
+<div class="container">
+    <div ng-include="'components/navbar/navbar.html'"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="overlay main-page ng-scope">
+            <h4>Token Expire time : <span data-ng-bind="tokenExpireTime"></span></h4>
+                <h4>Device UUID: <span data-ng-bind="userDetails('deviceUUID')"></span></h4>
+                <h4>Logged User Uuid: <span data-ng-bind="userDetails('userId')"></span></h4>
+                <h4>Client Token: <span data-ng-bind="userDetails('jwtToken')"></span></h4>
+                <div class="control-panel">
+                    <button type="button" class="btn btn-secondary-1 ng-click-active" ng-click="authenticate()" ng-disabled="pending">Authenticate</button>
+                    <button type="button" class="btn btn-secondary-1" ng-click="refreshCredentials()" ng-disabled="pending">Refresh Credentials</button>
+                    <button type="button" class="btn btn-secondary-1" ng-click="testValidToken()" ng-disabled="pending">Test Valid token</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
+    </div>
+</div>
